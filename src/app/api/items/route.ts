@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/server/db";
 import { Item } from "@/server/models/Item";
 
@@ -8,7 +8,7 @@ export async function GET() {
   return NextResponse.json(items);
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   await connectToDatabase();
   const data = await request.json();
   const newItem = new Item(data);
