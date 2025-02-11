@@ -34,7 +34,7 @@ export async function PUT(request: NextRequest) {
     return NextResponse.json(updatedItem);
   } catch (error) {
     return NextResponse.json(
-      { error: "Failed to update item", details: error.message },
+      { error: "Failed to update item", details: (error as Error).message },
       { status: 500 }
     );
   }
@@ -64,7 +64,7 @@ export async function DELETE(request: NextRequest) {
     return NextResponse.json({ message: "Item deleted successfully" });
   } catch (error) {
     return NextResponse.json(
-      { error: "Failed to delete item", details: error.message },
+      { error: "Failed to delete item", details: (error as Error).message },
       { status: 500 }
     );
   }

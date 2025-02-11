@@ -1,5 +1,23 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+interface WebpackConfig {
+  resolve: {
+    fallback: {
+      [key: string]: boolean;
+    };
+  };
+}
+
+interface NextConfig {
+  experimental: {
+    appDir: boolean;
+  };
+  webpack: (
+    config: WebpackConfig,
+    options: { isServer: boolean }
+  ) => WebpackConfig;
+}
+
+const nextConfig: NextConfig = {
   experimental: {
     appDir: true,
   },
