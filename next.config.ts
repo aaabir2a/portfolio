@@ -1,22 +1,8 @@
 /** @type {import('next').NextConfig} */
-interface WebpackConfig {
-  resolve: {
-    fallback: {
-      fs: boolean;
-      net: boolean;
-      tls: boolean;
-    };
-  };
-}
-
-interface NextConfig {
-  webpack: (
-    config: WebpackConfig,
-    options: { isServer: boolean }
-  ) => WebpackConfig;
-}
-
-const nextConfig: NextConfig = {
+const nextConfig = {
+  experimental: {
+    appDir: true,
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = {
