@@ -1,5 +1,4 @@
-import Menu from "../components/Menu";
-import Footer from "../components/Footer";
+
 import Link from "next/link";
 import ItemList from "@/components/ItemList";
 
@@ -40,7 +39,7 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Menu />
+     
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="bg-gray-900 text-white">
@@ -89,7 +88,7 @@ const HomePage = () => {
           </div>
         </section>
       </main>
-      <Footer />
+     
     </div>
   );
 };

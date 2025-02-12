@@ -1,5 +1,4 @@
-import Menu from "../../components/Menu"
-import Footer from "../../components/Footer"
+
 
 const ServicesPage = () => {
   // Mock data for services
@@ -38,7 +37,7 @@ const ServicesPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Menu />
+ 
       <main className="flex-grow">
         <section className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Our Services</h1>
@@ -54,7 +53,7 @@ const ServicesPage = () => {
           </div>
         </section>
       </main>
-      <Footer />
+     
     </div>
   )
 }

@@ -1,5 +1,5 @@
-import Menu from "../../components/Menu"
-import Footer from "../../components/Footer"
+import Image from "next/image"
+
 
 const AboutPage = () => {
   // Mock data for team members
@@ -12,7 +12,7 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Menu />
+   
       <main className="flex-grow">
         {/* About Section */}
         <section className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -34,7 +34,7 @@ const AboutPage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {teamMembers.map((member) => (
                 <div key={member.id} className="bg-white shadow-md rounded-lg overflow-hidden">
-                  <img
+                  <Image
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
                     className="w-full h-48 object-cover"
@@ -49,7 +49,7 @@ const AboutPage = () => {
           </div>
         </section>
       </main>
-      <Footer />
+      
     </div>
   )
 }
