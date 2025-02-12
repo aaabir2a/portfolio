@@ -18,7 +18,7 @@ export default function BlogPage() {
   const [author, setAuthor] = useState("");
   const [image, setImage] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState<string>("");
-  const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
+  // const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
 
   useEffect(() => {
     fetchBlogs();

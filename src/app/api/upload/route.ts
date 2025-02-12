@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import multer from "multer";
+// import multer from "multer";
 import path from "path";
 import fs from "fs/promises";
 
 // Configure multer storage
-const upload = multer({ dest: "public/uploads/" });
+// const upload = multer({ dest: "public/uploads/" });
 
 export async function POST(req: NextRequest) {
   try {
