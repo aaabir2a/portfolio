@@ -16,9 +16,7 @@ export default function BlogPage() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [author, setAuthor] = useState("");
-  const [image, setImage] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState<string>("");
-  // const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
 
   useEffect(() => {
     fetchBlogs();
@@ -38,7 +36,6 @@ export default function BlogPage() {
     if (!e.target.files || e.target.files.length === 0) return;
 
     const file = e.target.files[0];
-    setImage(file);
 
     // Upload image first
     const formData = new FormData();
@@ -74,7 +71,6 @@ export default function BlogPage() {
       setTitle("");
       setContent("");
       setAuthor("");
-      setImage(null);
       setImageUrl("");
     } catch (error) {
       console.error("Error creating blog:", error);
@@ -115,6 +111,8 @@ export default function BlogPage() {
             src={imageUrl}
             alt="Uploaded preview"
             className="w-32 h-32 object-cover mt-2"
+            width={128}
+            height={128}
           />
         )}
         <button
@@ -134,6 +132,8 @@ export default function BlogPage() {
                 src={blog.image}
                 alt={blog.title}
                 className="w-32 h-32 object-cover mt-2"
+                width={128}
+                height={128}
               />
             )}
             <p className="text-sm text-gray-500">Author: {blog.author}</p>
