@@ -15,6 +15,10 @@ const BlogSchema = new mongoose.Schema({
     required: true,
   },
 
+  image: {
+    type: String, // Store URL of the uploaded image
+  },
+
   createdAt: {
     type: Date,
     default: Date.now,
